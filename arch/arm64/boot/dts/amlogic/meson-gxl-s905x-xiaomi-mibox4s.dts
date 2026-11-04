@@ -107,7 +107,6 @@
 
 	wifi32k: wifi32k {
 		compatible = "pwm-clock";
-		#clock-cells = ;
 		clock-frequency = <32768>;
 		pwms = <&pwm_ef 0 30518 0>;
 	};
@@ -208,7 +207,7 @@
 };
 
 &efuse {
-	eth_mac: mac-address@0 {
+	mac_address_0: mac-address@0 {
 		reg = <0x00 0x06>;
 	};
 
@@ -266,9 +265,9 @@
 	pinctrl-0 = <&sdio_pins>;
 	pinctrl-1 = <&sdio_clk_gate_pins>;
 	pinctrl-names = "default", "clk-gate";
-	#address-cells = ;
-	#size-cells = ;
-	bus-width = ;
+	#address-cells = <1>;
+	#size-cells = <0>;
+	bus-width = <4>;
 	cap-sd-highspeed;
 	cap-sdio-irq;
 	max-frequency = <50000000>;
@@ -296,7 +295,7 @@
 	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
 	pinctrl-1 = <&emmc_clk_gate_pins>;
 	pinctrl-names = "default", "clk-gate";
-	bus-width = ;
+	bus-width = <8>;
 	cap-mmc-highspeed;
 	max-frequency = <100000000>;
 	non-removable;
